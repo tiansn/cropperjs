@@ -803,6 +803,21 @@ export default {
   },
 
   /**
+   * can move the rect to max width and height
+   * @param {width, height} of CanvasData
+   * @returns {Object} this
+   */
+  canMoveRectToMax(data) {
+    const { options } = this;
+    const { cropBoxData } = this;
+
+    options.aspectRatio = NaN;
+    cropBoxData.maxHeight = data.height
+    cropBoxData.maxWidth = data.width
+    return this;
+  },
+
+  /**
    * Change the drag mode.
    * @param {string} mode - The new drag mode.
    * @returns {Object} this
