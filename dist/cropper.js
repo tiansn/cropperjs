@@ -3209,6 +3209,21 @@ var methods = {
     return this;
   },
 
+	/**
+   * can move the rect to max width and height
+   * @param {width, height} of CanvasData
+   * @returns {Object} this
+   */
+  canMoveRectToMax: function canMoveRectToMax(data) {
+    var options = this.options;
+    var cropBoxData = this.cropBoxData;
+
+    options.aspectRatio = NaN;
+    cropBoxData.maxHeight = data.height
+    cropBoxData.maxWidth = data.width
+    return this;
+  },
+
 
   /**
    * Change the drag mode.
